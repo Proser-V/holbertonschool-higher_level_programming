@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 number = 98
-s = '%d Battery street' % number
+s = '{} Battery street' .format(number)
 print(s)
