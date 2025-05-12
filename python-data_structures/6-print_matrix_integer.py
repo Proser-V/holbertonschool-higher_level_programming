@@ -13,5 +13,5 @@ def print_matrix_integer(matrix=[[]]):
         else:
             print()
         i += 1
-    
+
     return
