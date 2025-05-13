@@ -12,7 +12,7 @@ def roman_to_int(roman_string):
     }
     i = 0
     result = 0
-    if roman_string is None or type(roman_string) != str:
+    if roman_string is None or type(roman_string) is not str:
         return 0
     else:
         while i < len(roman_string):
