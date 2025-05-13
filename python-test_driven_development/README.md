@@ -1,0 +1,1 @@
+Getting serious on python
