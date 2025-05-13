@@ -21,6 +21,7 @@ Date:
     2025-05-13
 """
 
+
 def add_integer(a, b=98):
     """
     Add two numbers.
