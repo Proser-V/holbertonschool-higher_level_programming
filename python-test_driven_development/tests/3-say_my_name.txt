@@ -19,3 +19,7 @@ My name is Valentin
 
 >>> say_my_name("", "")
 My name is  
+
+>>> say_my_name(25, 56)
+Traceback (most recent call last):
+TypeError: first_name must be a string
