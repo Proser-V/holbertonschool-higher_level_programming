@@ -38,13 +38,15 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     
+    i = 0
     new_line_check = 0
-    for char in text:
+    for i in range(len(text)):
+        char = text[i]
         if new_line_check == 1:
-            new_line_check = 0
-            if char == " " or char == "\t":
-                continue
-        if char == '?' or char == ':' or char == '.':
+            if (i + 1) <= len(text) and text[i + 1] != " ":
+                new_line_check = 0
+            continue
+        if char in '.:?':
             print(char)
             print()
             new_line_check = 1
