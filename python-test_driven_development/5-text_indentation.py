@@ -42,7 +42,8 @@ def text_indentation(text):
     for char in text:
         if new_line_check == 1:
             new_line_check = 0
-            continue
+            if char == " ":
+                continue
         if char == '?' or char == ':' or char == '.':
             print(char)
             print()
