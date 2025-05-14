@@ -43,8 +43,9 @@ def text_indentation(text):
     for i in range(len(text)):
         char = text[i]
         if new_line_check == 1:
-            if (i + 1) <= len(text) and text[i + 1] != " ":
+            if char != " ":
                 new_line_check = 0
+                print(char, end="")
             continue
         if char in '.:?':
             print(char)
