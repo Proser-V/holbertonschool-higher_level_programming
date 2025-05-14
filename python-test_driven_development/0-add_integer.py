@@ -3,7 +3,7 @@
 Module Name: 0-add_integer.py
 
 Description:
-    "This module include a function to add twe integers"
+    This module include a function to add two integers.
 
 Functions:
     add_integer(a, b=98): Return the sum of twe numbers.
