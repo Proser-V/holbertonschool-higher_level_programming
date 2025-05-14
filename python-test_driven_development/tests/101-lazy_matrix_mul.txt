@@ -30,7 +30,7 @@ ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with
 >>> lazy_matrix_mul([[1, '2']], [[3], [4]])
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-numpy._core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('<U21'), dtype('int64')) -> None
+TypeError: Scalar operands are not allowed, use '*' instead
 
 >>> lazy_matrix_mul([[]], [[1, 2], [3, 4]])
 Traceback (most recent call last):
@@ -55,12 +55,12 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 0 is different from 2)
 
->>> lazy_matrix_mul([[1, 2]], [["not", "numbers"]])
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-numpy._core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('int64'), dtype('<U7')) -> None
-
 >>> lazy_matrix_mul([[1, 2]], [[1, 2], [3]])
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+
+>>> lazy_matrix_mul("Holberton", [[5, 6], [7, 8]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: Scalar operands are not allowed, use '*' instead
