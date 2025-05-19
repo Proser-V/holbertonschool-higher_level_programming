@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module Name: 1-square.py
+Module Name: 2-square.py
 
 Description:
     This module include an empty class that defines a square.
