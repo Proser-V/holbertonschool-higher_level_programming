@@ -70,24 +70,12 @@ class Square:
         """
         An instance that prints the square with "#".
         """
-        i = 0
         if self.__size == 0:
-            while i < self.__position[1]:
-                print()
-                i += 1
             print()
-        else:
-            while i < self.__position[1]:
-                print()
-                i += 1
-            i = 0
-            while i < self.__size:
-                j = 0
-                while j < (self.__size + self.__position[0]):
-                    if j < self.__position[0]:
-                        print(" ", end="")
-                    else:
-                        print("#", end="")
-                    j += 1
-                print()
-                i += 1
+            return
+
+        for _ in range(self.__position[1]):
+            print()
+
+        for _ in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)
