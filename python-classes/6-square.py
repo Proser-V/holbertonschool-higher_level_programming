@@ -13,8 +13,8 @@ class Square:
     A class that defines a square.
     """
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -72,6 +72,9 @@ class Square:
         """
         i = 0
         if self.__size == 0:
+            while i < self.__position[1]:
+                print()
+                i += 1
             print()
         else:
             while i < self.__position[1]:
