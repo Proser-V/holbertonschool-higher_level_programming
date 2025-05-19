@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module Name: 3-rectangle.py
+Module Name: 4-rectangle.py
 
 Description:
     This module include an empty class that defines a rectangle.
@@ -45,15 +45,30 @@ class Rectangle:
             self.__height = value
 
     def area(self):
+        """
+        An instance returns the rectangle area.
+        """
         return self.__width * self.__height
 
     def perimeter(self):
+        """
+        An instance returns the rectangle perimeter.
+        """
         if self.__width == 0 or self.__height == 0:
             return 0
         return (self.__width + self.__height) * 2
 
     def __str__(self):
+        """
+        Prints the rectangle with "#".
+        """
         if self.width == 0 or self.height == 0:
             return ""
         lines = ["#" * self.width for _ in range(self.__height)]
         return "\n".join(lines)
+
+    def __repr__(self):
+        """
+        Return a string representation of the rectangle.
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
