@@ -1,3 +1,15 @@
->>> my_list = __import__('1-my_list').MyList
->>> my_list([56, 25, 148, 2, 36, 897, -5, 6])
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList([56, 25, 148, 2, 36, 897, -5, 6])
+
+>>> my_list.print_sorted()
 [-5, 2, 6, 25, 36, 56, 148, 897]
+
+>>> my_list2 = MyList(["Un", "Deux", "Trois"])
+>>> my_list2.print_sorted()
+['Deux', 'Trois', 'Un']
+
+>>> isinstance(my_list, MyList)
+True
+
+>>> isinstance(my_list, list)
+True

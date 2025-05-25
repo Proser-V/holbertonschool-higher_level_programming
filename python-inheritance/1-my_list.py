@@ -8,7 +8,6 @@ Description:
 
 
 class MyList(list):
-#!/usr/bin/python3
     """
         This class prints a sorted list.
     """
