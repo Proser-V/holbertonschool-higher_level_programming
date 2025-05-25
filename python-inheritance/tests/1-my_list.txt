@@ -4,9 +4,12 @@
 >>> my_list.print_sorted()
 [-5, 2, 6, 25, 36, 56, 148, 897]
 
->>> my_list2 = MyList(["Un", "Deux", "Trois"])
->>> my_list2.print_sorted()
-['Deux', 'Trois', 'Un']
+>>> my_list.append(42)
+>>> my_list.print_sorted()
+[-5, 2, 6, 25, 36, 42, 56, 148, 897]
+
+>>> str(sorted(my_list))
+'[-5, 2, 6, 25, 36, 42, 56, 148, 897]'
 
 >>> isinstance(my_list, MyList)
 True
