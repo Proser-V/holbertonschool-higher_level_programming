@@ -8,7 +8,7 @@
 >>> my_list.print_sorted()
 [-5, 2, 6, 25, 36, 42, 56, 148, 897]
 
->>> str(sorted(my_list))
+>>> my_list.__str__()
 '[-5, 2, 6, 25, 36, 42, 56, 148, 897]'
 
 >>> isinstance(my_list, MyList)

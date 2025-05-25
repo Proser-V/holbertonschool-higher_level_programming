@@ -14,3 +14,5 @@ class MyList(list):
     def print_sorted(self):
         my_list = sorted(self)
         print(my_list)
+    def __str__(self):
+        return str(sorted(self))
