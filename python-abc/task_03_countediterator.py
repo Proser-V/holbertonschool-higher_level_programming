@@ -15,15 +15,16 @@ class CountedIterator:
     """
 
     def __init__(self, object):
-        self.object = iter(object)
-        self.counter = 0
+        self.__object = iter(object)
+        self.__counter = 0
 
     def get_count(self):
-        return self.counter
+        return self.__counter
 
     def __next__(self):
         try:
-            self.counter += 1
-            return next(self.object)
+            item = next(self.__object)
+            self.__counter += 1
+            return item
         except StopIteration:
             raise
