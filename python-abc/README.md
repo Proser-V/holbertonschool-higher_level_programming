@@ -1,0 +1,1 @@
+Learning about abstract classes and interfaces in python OOP
