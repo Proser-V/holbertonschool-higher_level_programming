@@ -19,11 +19,11 @@ class CountedIterator:
         self.counter = 0
 
     def __next__(self):
-        self.counter += 1
-        if self.object is None:
-            raise StopIteration
-        else:
+        try:
+            self.counter += 1
             return next(self.object)
+        except StopIteration:
+            raise
 
     def get_count(self):
         return self.counter
