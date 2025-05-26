@@ -30,8 +30,8 @@ class VerboseList(list):
 
     def remove(self, item):
         super().remove(item)
-        print("Removed [{}] from the list".format(item))
+        print("Removed [{}] from the list.".format(item))
 
     def pop(self, index=-1):
         item = super().pop(index)
-        print("Popped [{}] from the list".format(item))
+        print("Popped [{}] from the list.".format(item))
