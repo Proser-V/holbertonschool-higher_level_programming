@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-from task_04_flyingfish import Fish, FlyingFish
+from task_05_dragon import Dragon
 
-flying_fish = FlyingFish()
-flying_fish.swim()
-flying_fish.fly()
-flying_fish.habitat()
-print(FlyingFish.mro())
+dragon = Dragon()
+dragon.swim()  # Outputs: The creature swims!
+dragon.fly()   # Outputs: The creature flies!
+dragon.roar()  # Outputs: The dragon roars!
