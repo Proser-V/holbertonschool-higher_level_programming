@@ -14,13 +14,16 @@ class CountedIterator:
         the "iter" function.
     """
     counter = 0
-    
+
     def __init__(self, object):
         self.object = iter(object)
 
     def __next__(self):
         CountedIterator.counter += 1
-        return next(self.object)
+        if self.object is None:
+            raise StopIteration
+        else:
+            return next(self.object)
 
     def get_count(self):
         return CountedIterator.counter
