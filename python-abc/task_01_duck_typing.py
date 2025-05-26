@@ -7,7 +7,8 @@ from math import pi
 Module Name: task_01_duck_typing.py
 
 Description:
-    This module include an abstract class and subclasses
+    This module include an abstract class and subclasses.
+    Another function simulate duck-typing.
 """
 
 
@@ -38,7 +39,7 @@ class Circle(Shape):
         """
         Initilisation function
         """
-        self.__radius = radius
+        self.__radius = abs(radius)
 
     def area(self):
         """
