@@ -1,14 +1,9 @@
 #!/usr/bin/python3
-from abc import ABC, abstractmethod
-from math import pi
-
-
 """
-Module Name: task_01_duck_typing.py
+Module Name: task_02_verboselist.py
 
 Description:
-    This module include an abstract class and subclasses.
-    Another function simulate duck-typing.
+    This module include a class that extends the Python list class
 """
 
 
