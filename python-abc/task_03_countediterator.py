@@ -13,17 +13,17 @@ class CountedIterator:
         A class that extends the built-in iterator obtained from
         the "iter" function.
     """
-    counter = 0
 
     def __init__(self, object):
         self.object = iter(object)
+        self.counter = 0
 
     def __next__(self):
-        CountedIterator.counter += 1
+        self.counter += 1
         if self.object is None:
             raise StopIteration
         else:
             return next(self.object)
 
     def get_count(self):
-        return CountedIterator.counter
+        return self.counter
