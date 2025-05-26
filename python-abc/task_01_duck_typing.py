@@ -29,13 +29,13 @@ class Circle(Shape):
         A subclass for a typical object
     """
     def __init__(self, radius):
-        self.radius = radius
+        self.__radius = radius
 
     def area(self):
-        return pi * (self.radius ** 2)
+        return pi * (self.__radius ** 2)
 
     def perimeter(self):
-        return 2 * pi * self.radius
+        return 2 * pi * self.__radius
 
 
 class Rectangle(Shape):
@@ -43,16 +43,19 @@ class Rectangle(Shape):
         A subclass for a typical object
     """
     def __init__(self, width, height):
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     def area(self):
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimeter(self):
-        return 2 * (self.width + self.height)
+        return 2 * (self.__width + self.__height)
 
 
 def shape_info(shape):
+    """
+    A function simulating duck-typing
+    """
     print("Area: {}".format(shape.area()))
     print("Perimeter: {}".format(shape.perimeter()))
