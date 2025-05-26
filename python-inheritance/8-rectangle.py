@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 """
@@ -9,7 +8,7 @@ Description:
     This module include a class that validates a rectangle values
 """
 
-
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 class Rectangle(BaseGeometry):
     """
         A class that validates a rectangle values
