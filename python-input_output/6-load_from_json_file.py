@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-Description : This module contain a function that creates an Object from a “JSON file”.
+Description : This module contain a function that creates an Object
+from a “JSON file”.
 """
 
 import json
