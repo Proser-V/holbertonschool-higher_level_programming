@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """
-
+Simple HTTP server with three endpoints:
+- /       : returns a plain text message
+- /data   : returns JSON data
+- /status : returns status OK
+- others  : returns 404 error
 """
 
 
@@ -8,6 +12,9 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 class SimpleAPIHandler(BaseHTTPRequestHandler):
+    """
+    Handles GET requests for different endpoints.
+    """
     def do_GET(self):
         if self.path == "/":
             self.send_response(200)
@@ -35,6 +42,9 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.wfile.write(b"Endpoint not found")
 
 def run(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
+    """
+    Starts the HTTP server on the specified port.
+    """
     server_address = ("", port)
     httpd = server_class(server_address, handler_class)
     print(f"Starting HTTP server on port {port}")
