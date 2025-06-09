@@ -6,7 +6,6 @@ Print the ressources titles and write the dictionaries in a CSV file.
 
 
 import requests
-import json
 import csv
 
 
