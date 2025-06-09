@@ -1,20 +1,27 @@
 #!/usr/bin/env python3
-from task_03_xml import serialize_to_xml, deserialize_from_xml
+import threading
+import time
+
+from task_04_net import start_server, send_data
 
 def main():
+    # Start the server in a separate thread
+    server_thread = threading.Thread(target=start_server)
+    server_thread.start()
+
+    # Give server some time to start listening
+    time.sleep(1)
+
+    # Run the client to send data
     sample_dict = {
-        'name': 'John',
-        'age': '28',
-        'city': 'New York'
+        'name': 'Alice',
+        'age': 30,
+        'city': 'Paris'
     }
+    send_data(sample_dict)
 
-    xml_file = "data.xml"
-    serialize_to_xml(sample_dict, xml_file)
-    print(f"Dictionary serialized to {xml_file}")
-
-    deserialized_data = deserialize_from_xml(xml_file)
-    print("\nDeserialized Data:")
-    print(deserialized_data)
+    # Ensure server thread ends
+    server_thread.join()
 
 if __name__ == "__main__":
     main()
