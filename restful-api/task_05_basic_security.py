@@ -39,13 +39,13 @@ def login():
     user = users.get(username)
 
     if username in users and check_password_hash(user["password"], pwd):
-        access_token = create_access_token(identity="user1", additional_claims={"role": "admin"})
+        access_token = create_access_token(identity=username, additional_claims={"role": user["role"]})
         return jsonify(access_token=access_token)
     else:
         return jsonify({"error": "Unauthorized"}), 401
 
 
-@app.route("/jwt-protected")
+@app.route("/jwt-protected", endpoint="jwt_protected_endpoint")
 @jwt_required
 def jwt_protected():
     return "JWT Auth: Access Granted"
@@ -66,7 +66,7 @@ def invalid_callback(msg):
     return jsonify({"error": "Invalid token"}), 401
 
 
-@app.route("/admin_only")
+@app.route("/admin_only", endpoint="admin_only_endpoint")
 @jwt_required
 def isadmin():
     claims = get_jwt()
