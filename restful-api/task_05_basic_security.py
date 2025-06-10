@@ -6,7 +6,7 @@ from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token, jwt_required, JWTManager
-from flask_jwt_extended import get_jwt
+from flask_jwt_extended import get_jwt_identity
 
 
 app = Flask(__name__)
@@ -21,8 +21,10 @@ users = {
 
 @auth.verify_password
 def verify_password(username, pwd):
-    if username in users and check_password_hash(users.get(username), pwd):
+    user = users.get(username)
+    if user and check_password_hash(user["password"], pwd):
         return username
+    return None
 
 
 @app.route("/basic-protected")
@@ -36,13 +38,13 @@ def login():
     data = request.get_json()
     username = data.get("username")
     pwd = data.get("password")
-    user = users.get(username)
 
-    if username in users and check_password_hash(user["password"], pwd):
-        access_token = create_access_token(identity=username, additional_claims={"role": user["role"]})
+    user = data.get(username)
+    if user and check_password_hash(user["password"], pwd):
+        access_token = create_access_token(identity={"username": username, "role": user["role"]})
         return jsonify(access_token=access_token)
     else:
-        return jsonify({"error": "Unauthorized"}), 401
+        return jsonify({"error": "Invalid credentials"}), 401
 
 
 @app.route("/jwt-protected", endpoint="jwt_protected_endpoint")
@@ -69,12 +71,12 @@ def invalid_callback(msg):
 @app.route("/admin_only", endpoint="admin_only_endpoint")
 @jwt_required
 def isadmin():
-    claims = get_jwt()
-    if claims.get("role") != "admin":
+    identity = get_jwt_identity()
+    if identity["role"] != "admin":
         return jsonify({"error": "Admin access required"}), 403
     else:
         return "Admin Access: Granted"
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run()
