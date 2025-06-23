@@ -1,4 +1,4 @@
--- A script that lists all genres from hbtn_0d_tvshows and displays the number of shows linked to each.
+-- A script that uses the hbtn_0d_tvshows database to lists all genres of the show Dexter.
 
 SELECT tv_genres.name
 FROM tv_shows
