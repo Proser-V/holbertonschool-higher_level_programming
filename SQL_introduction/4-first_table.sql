@@ -3,4 +3,4 @@
 CREATE TABLE IF NOT EXISTS first_table(
     id INT PRIMARY AUTO_INCREMENT,
     name VARCHAR(256)
-)
+);
