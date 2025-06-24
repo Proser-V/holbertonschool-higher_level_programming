@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''
-Module that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa.
+Module that lists all states with a name starting with N
+(upper N) from the database hbtn_0e_0_usa.
 '''
 
 import MySQLdb
