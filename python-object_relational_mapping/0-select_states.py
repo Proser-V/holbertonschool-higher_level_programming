@@ -23,9 +23,8 @@ if __name__ == "__main__":
 
     cursor.execute("SELECT id, name FROM states ORDER BY id ASC;")
     rows = cursor.fetchall()
-    
+
     for id, name in rows:
         print("({}, '{}')".format(id, name))
-
     cursor.close()
     db.close()
