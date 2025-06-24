@@ -12,7 +12,6 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: script.py username password database")
         sys.exit(1)
 
     username = sys.argv[1]
@@ -22,7 +21,6 @@ if __name__ == "__main__":
     engine = create_engine(
         f'mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}'
         )
-    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
