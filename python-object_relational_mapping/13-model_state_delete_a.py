@@ -29,6 +29,7 @@ if __name__ == "__main__":
         for letter in state.name:
             if letter == 'a':
                 session.delete(state)
-                session.commit()
+                break
 
+    session.commit()
     session.close()
