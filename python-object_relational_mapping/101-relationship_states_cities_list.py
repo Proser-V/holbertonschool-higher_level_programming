@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 '''
-Module that that lists all State objects, and corresponding City objects,
-contained in the database hbtn_0e_101_usa.
+This script lists all State objects and corresponding City objects
+from the database hbtn_0e_101_usa using SQLAlchemy ORM. It connects to
+a MySQL database using parameters passed via command-line arguments.
 '''
 
 
@@ -22,6 +23,7 @@ if __name__ == "__main__":
     engine = create_engine(
         f'mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}'
         )
+    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()

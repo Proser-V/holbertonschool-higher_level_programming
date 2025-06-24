@@ -11,7 +11,7 @@ from relationship_state import Base
 
 class City(Base):
     '''
-    State class connected to MySQL 'cities' table.
+    Defines a City mapped to the cities table, linked to a State.
     '''
     __tablename__ = 'cities'
 

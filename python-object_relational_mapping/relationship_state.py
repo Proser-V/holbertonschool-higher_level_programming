@@ -14,7 +14,7 @@ Base = declarative_base()
 
 class State(Base):
     '''
-    State class connected to MySQL 'states' table.
+    Defines a State mapped to the states table with a relationship to City.
     '''
     __tablename__ = 'states'
 
