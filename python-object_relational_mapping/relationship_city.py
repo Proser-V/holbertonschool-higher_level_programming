@@ -11,6 +11,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class City(Base):
     '''
     Defines a City mapped to the cities table, linked to a State.
