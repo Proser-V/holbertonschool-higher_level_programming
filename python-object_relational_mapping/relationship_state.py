@@ -5,11 +5,8 @@ Module that contains the class definition of a State and an instance Base.
 
 
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
+from relationship_city import Base
 from sqlalchemy.orm import relationship
-
-
-Base = declarative_base()
 
 
 class State(Base):
@@ -24,6 +21,6 @@ class State(Base):
     cities = relationship(
         'City',
         back_populates="state",
-        cascade="all, delete-orphan",
+        cascade="all, delete",
         order_by='City.id'
         )

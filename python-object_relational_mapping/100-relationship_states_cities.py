@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''
-Module that creates the State “California” with the City “San Francisco” from the database hbtn_0e_100_usa.
+Module that creates the State “California” with the City “San Francisco”
+from the database hbtn_0e_100_usa.
 '''
 
 
