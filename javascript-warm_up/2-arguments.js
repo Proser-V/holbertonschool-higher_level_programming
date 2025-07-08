@@ -3,9 +3,9 @@
 const { argv } = require('node:process');
 
 if (argv[2] == null) {
-	console.log("No argument");
+  console.log('No argument');
 } else if (argv[2] != null && argv[3] == null) {
-	console.log("Argument found")
+  console.log('Argument found');
 } else {
-	console.log("Arguments found")
+  console.log('Arguments found');
 }
