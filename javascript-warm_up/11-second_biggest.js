@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const args = process.argv.slice(2);
+const args = process.argv.slice(2).map(Number);
 let i = 0;
 const argsNumber = args.length;
 let currentNumber;
