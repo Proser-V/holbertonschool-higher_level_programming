@@ -10,7 +10,7 @@ function add () {
     const sum = numA + numB;
     console.log(sum);
   } else {
-    console.log('Please pass 2 integers');
+    console.log(NaN);
   }
 }
 
