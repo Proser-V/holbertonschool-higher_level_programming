@@ -1,13 +1,10 @@
 #!/usr/bin/node
 
-const { argv } = require('node:process');
+const arg = process.argv[2];
 
-const argument = argv[2];
-const onlynumber = /^-?\d+$/.test(argument);
-
-if (onlynumber !== true || argv[2] == null) {
-  console.log('Not a number');
+const num = Number(arg); /* Convert a string to an int (or NaN) */
+if (Number.isInteger(num)) { /* Check if its an int */
+  console.log('My number: ' + num);
 } else {
-  const digits = argument.match(/-?\d+/g);
-  console.log('My number: ' + digits);
+  console.log('Not a number');
 }
