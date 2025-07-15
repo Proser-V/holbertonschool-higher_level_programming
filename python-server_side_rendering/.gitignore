@@ -1,2 +1,4 @@
 *.txt
 /outputs
+.json
+00_main.py

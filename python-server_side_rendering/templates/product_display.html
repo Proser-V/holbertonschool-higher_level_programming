@@ -1,0 +1,41 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Items List</title>
+</head>
+<body>
+
+    {% include 'header.html' %}
+
+	<table>
+        <h2>Table of products</h2>
+        <caption>
+            Products Data
+        </caption>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if products %}
+                {% for product in products %}
+            <tr>
+                <th scope="row">{{ product.name }}</th>
+                <td>{{ product.category }}</td>
+                <td>{{ "%.2f"|format(product.price) }}</td>
+            </tr>
+                {% endfor %}
+            {% else %}
+                <p>No products found</p>
+            {% endif %}
+        </tbody>
+    </table>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>
