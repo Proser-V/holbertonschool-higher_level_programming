@@ -48,9 +48,8 @@ def display_products():
     id = request.args.get("id")
 
     if source not in ("json", "csv"):
-        return abort(
-            400, "Wrong source"
-            )
+        return render_template("product_display.html",
+                               products=[], message="Wrong source"), 200
     if source == "json":
         data = products_json()
     else:
