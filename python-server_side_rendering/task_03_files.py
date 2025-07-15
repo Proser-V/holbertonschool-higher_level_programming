@@ -59,8 +59,12 @@ def display_products():
         try:
             target_id = int(id)
             data = [product for product in data if product["id"] == target_id]
+            if not data:
+                return render_template("product_display.html", products=[],
+                                       message="Product not found"), 200
         except ValueError:
-            return abort(400, "Product not found")
+            return render_template("product_display.html", products=[],
+                                   message="Product not found"), 200
 
     return render_template("product_display.html", products=data)
 
