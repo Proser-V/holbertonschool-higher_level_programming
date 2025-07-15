@@ -11,7 +11,7 @@ def generate_invitations(template, attendees):
     if len(attendees) == 0:
         print("Error: No data provided, no output files generated.")
         return
-    for index, attendee in enumerate(attendees, startr=1):
+    for index, attendee in enumerate(attendees, start=1):
         templatecopy = template
         for key in ["name", "event_title", "event_date", "event_location"]:
             value = attendee.get(key)
