@@ -17,7 +17,7 @@ def generate_invitations(template, attendees):
             value = attendee.get(key)
             if value is None:
                 value = "N/A"
-                templatecopy = templatecopy.replace("{" + key + "}", str(value))
+            templatecopy = templatecopy.replace("{" + key + "}", str(value))
 
         filename = f"output_{index}.txt"
         with open(filename, "w") as f:
