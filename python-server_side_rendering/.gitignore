@@ -1,0 +1,7 @@
+*.txt
+/outputs
+*.json
+00_main.py
+04_dbcreation.py
+*.csv
+*.db
