@@ -1,1 +1,1 @@
-Learning about persistence
+Training my SQL skills
